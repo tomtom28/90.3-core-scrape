@@ -24,7 +24,7 @@ recently_played = recently_played.prettify().split("<br>")
 # Split by "-" dash to build list of artist / song dictionaries
 list_of_music = []
 
-# Only taking most recent 3 songs
+# Only taking middle 3 songs (need to re-visit the parsing to get all 5)
 for i in range(1,4):
     artist = recently_played[i].strip().split(" - ")[0]
     song = recently_played[i].strip().split(" - ")[1]
