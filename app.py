@@ -38,7 +38,7 @@ except Exception as e:
 
 
 # test data
-#list_of_scraped_music = [{'artist': 'The Beatles', 'song': 'A Day In The Life'}, {'artist': 'Test Artist 1', 'song': 'Test Song 1'}, {'artist': 'Test Artist 2', 'song': 'Test Song 2'}]
+# list_of_scraped_music = [{'artist': 'The Beatles', 'song': 'A Day In The Life'}, {'artist': 'Test Artist 1', 'song': 'Test Song 1'}, {'artist': 'Test Artist 2', 'song': 'Test Song 2'}]
 
 # Only Read to File if scrape was successful
 list_of_new_music = list_of_scraped_music

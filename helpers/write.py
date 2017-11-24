@@ -9,6 +9,6 @@ def write_csv_file(list_of_new_music):
         list_of_csv_entries.append([row["artist"],row["song"]])
 
     # Open CSV File and Write in any new entries
-    with open('artist_song.csv', 'a') as csv_file:
+    with open('logs/artist_song.csv', 'a') as csv_file:
         file_writer = csv.writer(csv_file)
         file_writer.writerows(list_of_csv_entries)
