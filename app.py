@@ -2,8 +2,8 @@ import requests as req
 import html
 from bs4 import BeautifulSoup
 
-from read import read_csv_file
-from write import write_csv_file
+from helpers.read import read_csv_file
+from helpers.write import write_csv_file
 
 # https://medium.freecodecamp.org/how-to-scrape-websites-with-python-and-beautifulsoup-5946935d93fe
 
