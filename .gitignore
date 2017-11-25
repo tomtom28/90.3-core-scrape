@@ -2,7 +2,7 @@
 .DS_Store
 
 # API Keys
-90.3-CORE-SCRAPE/helpers/config.py
+helpers/config.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
