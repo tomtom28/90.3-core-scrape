@@ -6,7 +6,7 @@ def read_csv_file():
     list_of_music = []
 
     # Open CSV File and Read in Existing entries
-    with open('logs/artist_song.csv',  newline='\n') as csv_file:
+    with open('logs/scrape_artist_song.csv',  newline='\n') as csv_file:
         file_reader = csv.reader(csv_file)
         for row in file_reader:
             current_entry = {"artist": row[0], "song": row[1]}

@@ -1,6 +1,6 @@
 # 90.3-core-scrape
 
-Navigate to 90.3 Core FM [website](http://thecore.fm/public/index.php) and scrape recent songs to CSV file.
+Navigate to the 90.3 Core FM [website](http://thecore.fm/public/index.php) and scrape recent songs to a CSV file.
 
 Future development: parse CSV file every X hours and upload new music to a Spotify playlist
 
