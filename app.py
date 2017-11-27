@@ -27,10 +27,10 @@ try:
     recently_played = recently_played.prettify().split("<br>")
 
     # Split by "-" dash to build list of artist / song dictionaries
-    # Only taking middle 3 songs (need to re-visit the parsing to get all 5)
-    for i in range(1,4):
-        artist = recently_played[i].strip().split(" - ")[0]
-        song = recently_played[i].strip().split(" - ")[1]
+    # Collects the latest 4. The more current one (5th) is not getting collected in scrape
+    for i in range(1,len(recently_played)):
+        artist = recently_played[i].strip().split(" - ")[0].replace("</br>","").strip()
+        song = recently_played[i].strip().split(" - ")[1].replace("</br>","").strip()
         list_of_scraped_music.append({"artist": artist, "song": song})
 
 except Exception as e:
@@ -38,7 +38,9 @@ except Exception as e:
 
 
 # test data
+# print(list_of_scraped_music)
 # list_of_scraped_music = [{'artist': 'The Beatles', 'song': 'A Day In The Life'}, {'artist': 'Test Artist 1', 'song': 'Test Song 1'}, {'artist': 'Test Artist 2', 'song': 'Test Song 2'}]
+# list_of_scraped_music = []
 
 # Only Read to File if scrape was successful
 list_of_new_music = list_of_scraped_music
