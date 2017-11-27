@@ -8,7 +8,7 @@ Future development: parse CSV file every X hours and upload new music to a Spoti
 ### Cloning Down the Repo
 This application uses Python 3.
 
-Use `pip3 install` to install all requirements.
+Use ` pip install -r requirements.txt` to install all requirements.
 
 Run application by `cd`ing into the Repo and using `python app.py`
 
