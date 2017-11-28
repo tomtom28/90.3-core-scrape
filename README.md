@@ -12,4 +12,6 @@ Use ` pip install -r requirements.txt` to install all requirements.
 
 Run application by `cd`ing into the Repo and using `python app.py`
 
+Run application every 5 minutes using `python __init__.py`
+
 Hook up to your own Spotify Account by renaming `config.test.py` to `config.py` and adding your API keys
