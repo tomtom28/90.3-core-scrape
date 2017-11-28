@@ -2,15 +2,14 @@ import requests as req
 import html
 from bs4 import BeautifulSoup
 
-from helpers.read import read_csv_file
-from helpers.write import write_csv_file
+import csv
 
 # https://medium.freecodecamp.org/how-to-scrape-websites-with-python-and-beautifulsoup-5946935d93fe
 
 def scrape_music():
 
     # Log that script is started
-    print("Beginning to scrape . . .")
+    print "Beginning to scrape . . ."
 
     # Get HTML from 90.3 Core FM website
     url = "http://thecore.fm/public/index.php"
@@ -38,10 +37,10 @@ def scrape_music():
             song = recently_played[i].strip().split(" - ")[1].replace("</br>","").strip()
             list_of_scraped_music.append({"artist": artist, "song": song})
 
-        print("Scrape completed")
+        print "Scrape completed"
 
     except Exception as e:
-        print("Scrape was not successful")
+        print "Scrape was not successful"
 
 
     # test data
@@ -65,3 +64,38 @@ def scrape_music():
     # Only Write to File if scrape contained unique value
     if list_of_new_music:
         write_csv_file(list_of_new_music)
+
+
+
+# HELPER FUNCTIONS ARE BELOW . . .
+# =========================================================================================
+
+# Read the CSV file of music and return all the entries
+def read_csv_file():
+    # List of dictionaries to store artists and songs
+    list_of_music = []
+
+    # Open CSV File and Read in Existing entries
+    with open('logs/scrape_artist_song.csv') as csv_file:
+        file_reader = csv.reader(csv_file)
+        for row in file_reader:
+            current_entry = {"artist": row[0], "song": row[1]}
+            list_of_music.append(current_entry)
+
+    # Return music entries read from file
+    return list_of_music
+
+
+
+# Write to the CSV file of music
+def write_csv_file(list_of_new_music):
+
+    # Parse Entries for proper formatting
+    list_of_csv_entries = []
+    for row in list_of_new_music:
+        list_of_csv_entries.append([row["artist"],row["song"]])
+
+    # Open CSV File and Write in any new entries
+    with open('logs/scrape_artist_song.csv', 'a') as csv_file:
+        file_writer = csv.writer(csv_file)
+        file_writer.writerows(list_of_csv_entries)
