@@ -99,3 +99,8 @@ def write_csv_file(list_of_new_music):
     with open('logs/scrape_artist_song.csv', 'a') as csv_file:
         file_writer = csv.writer(csv_file)
         file_writer.writerows(list_of_csv_entries)
+
+
+# Fire off preliminary scrape if called directly via app.py
+if __name__ == "__main__":
+    scrape_music()
