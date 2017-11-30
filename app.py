@@ -65,3 +65,8 @@ def scrape_music():
     # Only Write to File if scrape contained unique value
     if list_of_new_music:
         write_csv_file(list_of_new_music)
+
+
+# Fire off preliminary scrape if called directly via app.py
+if __name__ == "__main__":
+    scrape_music()
